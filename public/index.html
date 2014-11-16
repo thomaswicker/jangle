@@ -21,7 +21,13 @@
 			float: left;
 			width: 30px;
 		}
+
 		.task {
+			float: left;
+			width: 100%;
+		}
+		
+		.task-detail {
 			float: left;
 			width: calc(100% - 30px;
 		}
@@ -60,13 +66,12 @@
 		<!-- TODO LIST -->
 		<div id="todo-list" class="row">
 			<div class="medium-8 columns">
-
 				<!-- LOOP OVER THE TODOS IN $scope.todos -->
-				<div class="panel medium-8 columns" ng-repeat="todo in todos">
+				<div class="panel medium-8 task" ng-repeat="todo in todos">
 					<div class="checkbox">
 						<input type="checkbox" ng-click="deleteTodo(todo._id)">
 					</div>
-					<div class="task">{{ todo.text }}</div>
+					<div class="task-detail">{{ todo.text }}</div>
 				</div>
 
 			</div>
