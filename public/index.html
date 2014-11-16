@@ -29,13 +29,29 @@
 	<section class="container">
 
 		<!-- HEADER AND TODO COUNT -->
-		<div class="jumbotron text-center">
+		<div class="panel">
 			<h1>Jangle Todos <span class="label label-info">{{ todos.length }}</span></h1>
+		</div>
+
+		<!-- FORM TO CREATE TODOS -->
+		<div id="todo-form" class="row">
+			<div class="medium-8 columns">
+				<form>
+					<div class="form-group">
+
+						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+						<input type="text" class="form-control input-lg text-center" placeholder="Add your todo here!" ng-model="formData.text">
+					</div>
+
+					<!-- createToDo() WILL CREATE NEW TODOS -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+				</form>
+			</div>
 		</div>
 
 		<!-- TODO LIST -->
 		<div id="todo-list" class="row">
-			<div class="col-sm-4 col-sm-offset-4">
+			<div class="medium-8 columns">
 
 				<!-- LOOP OVER THE TODOS IN $scope.todos -->
 				<div class="checkbox" ng-repeat="todo in todos">
@@ -44,22 +60,6 @@
 					</label>
 				</div>
 
-			</div>
-		</div>
-
-		<!-- FORM TO CREATE TODOS -->
-		<div id="todo-form" class="row">
-			<div class="col-sm-8 col-sm-offset-2 text-center">
-				<form>
-					<div class="form-group">
-
-						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-						<input type="text" class="form-control input-lg text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
-					</div>
-
-					<!-- createToDo() WILL CREATE NEW TODOS -->
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
-				</form>
 			</div>
 		</div>
 	</section>
