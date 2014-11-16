@@ -17,6 +17,14 @@
 		body 					{ padding-top:50px; }
 		#todo-list 				{ margin-bottom:30px; }
 		#todo-form 	 			{ margin-bottom:50px; }
+		.checkbox {
+			float: left;
+			width: 30px;
+		}
+		.task {
+			float: left;
+			width: calc(100% - 30px;
+		}
 	</style>
 
 	<!-- SPELLS -->
@@ -29,7 +37,7 @@
 	<section class="container">
 
 		<!-- HEADER AND TODO COUNT -->
-		<div class="medium-8 columns">
+		<div class="medium-8 columns text-center">
 			<h1>Jangle Todos <span class="label label-info">{{ todos.length }}</span></h1>
 		</div>
 
@@ -54,10 +62,11 @@
 			<div class="medium-8 columns">
 
 				<!-- LOOP OVER THE TODOS IN $scope.todos -->
-				<div class="checkbox" ng-repeat="todo in todos">
-					<label>
-						<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-					</label>
+				<div class="panel medium-8 columns" ng-repeat="todo in todos">
+					<div class="checkbox">
+						<input type="checkbox" ng-click="deleteTodo(todo._id)">
+					</div>
+					<div class="task">{{ todo.text }}</div>
 				</div>
 
 			</div>
